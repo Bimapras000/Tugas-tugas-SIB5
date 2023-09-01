@@ -1,0 +1,54 @@
+p {
+    color: white;
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15pt;
+}
+body{
+    background-color: blanchedalmond;
+    background-image: url(binatang.webp) ;
+    background-position: center;
+    margin: 0cm 2cm;
+
+}
+
+marquee{
+    color: white;
+}
+
+ul{
+    color: white;
+}
+li{
+    color: white;
+}
+
+fieldset, legend {
+    border: greenyellow;
+    border-radius: 10px;
+}
+
+legend {
+    padding: 10px;
+    background-color: white;
+    color: greenyellow;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+a.item:link, a.item:visited, a.item:active{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    border: 2px solid white;
+    padding: 5px;
+    background-color: white;
+}
+
+a.item:hover{
+    color: blue;
+    font-size: 15px;
+    font-weight: bold;
+    padding-right: 10px;
+    background-color: yellowgreen;
+}
