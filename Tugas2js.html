@@ -1,0 +1,32 @@
+<script>
+    var pegawai = "Ridwan";
+    var jabatan = "Manager";
+    var status = "menikah";
+
+
+    if (jabatan === "Manager") {
+        gajiPokok = 15000000; // 15 juta
+    } else if (jabatan === "Asisten Manager") {
+        gajiPokok = 10000000; // 10 juta
+    } else if (jabatan === "Staff") {
+        gajiPokok = 5000000; // 5 juta
+    } else {
+        gajiPokok = 0;
+    }
+
+    var tunjanganJabatan = 0.15 * gajiPokok;
+    var bpjs = 0.10 * gajiPokok;
+    var tunjanganKeluarga = status === "menikah" ? 0.20 * gajiPokok : 0;
+    var totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+    document.write("<h1>Data Pegawai</h1>");
+    document.write("<br>Nama Pegawai : " + pegawai);
+    document.write("<br>Jabatan : " + jabatan);
+    document.write("<br>Status : " + status);
+    document.write("<br>Gaji Pokok : " + gajiPokok);
+    document.write("<br>Tunjangan Jabatan : " + tunjanganJabatan);
+    document.write("<br>BPJS : " + bpjs);
+    document.write("<br>Tunjangan Keluarga : " + tunjanganKeluarga);
+    document.write("<br>Total Gaji : " + totalGaji);
+
+</script>
