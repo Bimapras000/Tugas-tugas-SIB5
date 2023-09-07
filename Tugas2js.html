@@ -16,7 +16,7 @@
 
     var tunjanganJabatan = 0.15 * gajiPokok;
     var bpjs = 0.10 * gajiPokok;
-    var tunjanganKeluarga = status === "menikah" ? 0.20 * gajiPokok : 0;
+    var tunjanganKeluarga = status === "menikah" ? 0.20 * gajiPokok : (status === "belum menikah" ? 0 : 0); 
     var totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
 
     document.write("<h1>Data Pegawai</h1>");
