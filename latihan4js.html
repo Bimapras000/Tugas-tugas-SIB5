@@ -1,0 +1,22 @@
+<!-- //if 1 kondisi -->
+<script>
+    let pelanggan = "Bima Prasetiya";
+    let TotalBelanja = 150000;
+    let keterangan = "";
+
+    if (TotalBelanja > 100000){
+        keterangan = "Selamat " + pelanggan + " Anda Dapat Hadiah";
+    } else {
+        keterangan = "Terimakasih " +pelanggan+ " Sudah Berbelanja";
+    }
+
+    document.write("Atas nama Pelanggan " +pelanggan+ " Dengan Total Belanja " +TotalBelanja+ " Keterangan " + keterangan);
+</script>
+
+<!-- if ternary atau if 2 kodisi -->
+<script>
+    let siswa = "Bima Prasetiya";
+    let nilai = 77;
+    let ket = (nilai >= 60) ? "Lulus" : "Gagal";
+    document.write("<br> Siswa Bernama " +siswa+ " Dengan Nilai " +nilai+ " Dinyatakan " + ket);
+</script>

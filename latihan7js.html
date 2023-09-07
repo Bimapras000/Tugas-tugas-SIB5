@@ -1,0 +1,28 @@
+<script>
+    let pembeli = "Bima";
+    let barang = "Motor";
+    let hatga_satuan = 0;
+
+    switch(barang){
+        case 'TV' : hatga_satuan = 2000000; break;
+        case 'Motor' : hatga_satuan = 12000000; break;
+        case 'Kulkas' : hatga_satuan = 4000000; break;
+        default : hatga_satuan = 0;
+        
+    }
+    let jlmbeli = 3;
+    let bruto = hatga_satuan * jlmbeli;
+    let ppn = bruto * 0.11;
+
+    let diskon = 0;
+    if(barang == 'TV') diskon = 0.3 *bruto;
+    else if(barang == 'Motor') diskon = 0.2 *bruto;
+    else diskon = 0.05 * bruto;
+    let hasil_diskon = bruto - diskon;
+
+    document.write("<h1> Data Pembelian </h1>");
+    document.write("<br> Pembeli : " +pembeli+ "<br> Barang : " +barang+ 
+    "<br> Jumlah Barang : " +jlmbeli+ "<br> Harga Satuan : " 
+    +hatga_satuan+ "<br> Total Harga : "+bruto+ "<br> Diskon : " 
+    +diskon+ "<br> PPN : " +ppn+ "<br> Total Harga dipotong diskon : " +hasil_diskon);
+</script>

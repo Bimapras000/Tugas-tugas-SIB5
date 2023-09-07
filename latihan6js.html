@@ -1,0 +1,22 @@
+<script>
+    let siswa = "Bima Prasetiya";
+    let nilai = 99;
+    let grade = " ";
+    if(nilai > 85 && nilai <= 100) grade = "A";
+    else if (nilai > 75 && nilai <= 85) grade = "B";
+    else if (nilai >60 && nilai <= 75) grade = "C";
+    else if (nilai >30 && nilai <= 60) grade = "D";
+    else if (nilai >0 && nilai <= 30) grade = "E";
+    else grade = " ";
+
+    switch(grade){
+        case "A" : predicat = "Sempurna"; break;
+        case "B" : predicat = "Bail"; break;
+        case "C" : predicat = "Cukup"; break;
+        case "D" : predicat = "Kurang"; break;
+        case "E" : predicat = "Buruk"; break;
+        default : predicat = " "; break
+    }
+
+    document.write("Siswa bernama : " +siswa+ " Dengan Nilai : " +nilai+ " Gradenya : " +grade+ " Dan Predikatnya : " +predicat);
+</script>
