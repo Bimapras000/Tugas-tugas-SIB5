@@ -1,0 +1,84 @@
+<script>
+    let p1 = {"nama" : "Pegawai1", nilai:1};
+    let p2 = {"nama" : "Pegawai2", nilai:2};
+    let p3 = {"nama" : "Pegawai3", nilai:3};
+    let p4 = {"nama" : "Pegawai4", nilai:4};
+    let p5 = {"nama" : "Pegawai5", nilai:5};
+    let p6 = {"nama" : "Pegawai6", nilai:6};
+    let p7 = {"nama" : "Pegawai7", nilai:7};
+    let p8 = {"nama" : "Pegawai8", nilai:8};
+    let p9 = {"nama" : "Pegawai9", nilai:9};
+    let p10 = {"nama" : "Pegawai10", nilai:10};
+    let pegawai = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
+</script>
+
+<table style="padding: 10; text-align: center; width: 100%; height: 75%;">
+    <thead style="background-color: rgb(0, 255, 251);">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Gaji Pokok</th>
+            <th>Tunjangan Jabatan</th>
+            <th>Tunjangan Kesehatan</th>
+            <th>Gaji Kotor</th>
+            <th>Agama</th>
+            <th>Zakat Profesi</th>
+            <th>Take Home Pay</th>
+        </tr>
+    </thead>
+    <tbody>
+        <script>
+            var no = 1;
+            for (p of pegawai){
+                let ket = (p.nilai);
+                let jabatan;
+                let gapok;
+
+                if (ket > 8 && ket <= 10) {
+                    jabatan = "Staff";
+                }
+                else if (ket > 5 && ket <= 8) {
+                    jabatan = "Supervisor";
+                }
+                else if (ket > 2 && ket <= 5) {
+                    jabatan = "Asistent Manager";
+                }
+                else if (ket > 0 && ket <= 2) {
+                    jabatan = "Manager";
+                }
+                else {
+                    jabatan = " ";
+                }
+
+                switch(jabatan){
+                    case "Manager" : gapok = 15000000; break;
+                    case "Asistent Manager" : gapok = 10000000; break;
+                    case "Supervisor" : gapok = 7000000; break;
+                    case "Staff" : gapok = 4000000; break;
+                    default : gapok = 0; break
+                }
+
+                let tunjanganJabatan = 0.2 * gapok;
+                let tunjanganKesehatan = 0.1 * gapok;
+                let gajiKotor = gapok + tunjanganJabatan + tunjanganKesehatan;
+                let agama = (no % 2 === 0) ? "Non Muslim" : "Muslim";
+                let zakatProfesi = (agama === "Muslim" && gajiKotor >= 7000000) ? 0.025 * gajiKotor : 0;
+                let takeHomePay = gajiKotor - zakatProfesi;
+
+                document.write(`<tr bgcolor="${(no % 2 === 0) ? 'blue' : 'yellow'}">
+                    <td>${no++}</td>
+                    <td>${p.nama}</td>
+                    <td>${jabatan}</td>
+                    <td>${gapok}</td>
+                    <td>${tunjanganJabatan}</td>
+                    <td>${tunjanganKesehatan}</td>
+                    <td>${gajiKotor}</td>
+                    <td>${agama}</td>
+                    <td>${zakatProfesi}</td>
+                    <td>${takeHomePay}</td>
+                </tr>`);
+            }
+        </script>
+    </tbody>
+</table>
