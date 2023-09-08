@@ -1,0 +1,28 @@
+<script>
+    var buah = ['papaya',' mangga',' pisang',' apel']; //deklarasi array menggunakan kurung []
+    //ganti index ke 2
+    buah[2] = 'jeruk'
+    for( var i=0; i< buah.length; i++){
+        document.write("<br>" + buah[i] + "<br>")
+    }
+    
+</script>
+<script>
+
+    let p1 = {'nama' : 'Bima', 'divisi' : 'Manager', 'gaji':20000000};
+    let p2 = {'nama' : 'Pras', 'divisi' : 'HDM', 'gaji':7000000};
+    let p3 = {'nama' : 'Tia', 'divisi' : 'SDM', 'gaji':7000000};
+
+    //menampilkan object
+    let pegawai = [p1,p2,p3];
+    for (let i = 0; i < pegawai.length; i++){
+        document.write("<br>" + pegawai[i]+ "<br>");
+    }
+
+    //menampilkan data
+    for (p of pegawai){
+        document.write("<br>" +p.nama);
+        document.write("<br>" +p.divisi);
+        document.write("<br>" +p.gaji);
+    }
+</script>
