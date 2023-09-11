@@ -62,11 +62,11 @@
                 let tunjanganJabatan = 0.2 * gapok;
                 let tunjanganKesehatan = 0.1 * gapok;
                 let gajiKotor = gapok + tunjanganJabatan + tunjanganKesehatan;
-                let agama = (no % 2 === 0) ? "Non Muslim" : "Muslim";
+                let agama = no % 2 === 0 ? 'Non Muslim' : 'Muslim';
                 let zakatProfesi = (agama === "Muslim" && gajiKotor >= 7000000) ? 0.025 * gajiKotor : 0;
                 let takeHomePay = gajiKotor - zakatProfesi;
 
-                document.write(`<tr bgcolor="${(no % 2 === 0) ? 'blue' : 'yellow'}">
+                document.write(`<tr bgcolor="${no % 2 === 0 ? 'blue' : 'yellow'}">
                     <td>${no++}</td>
                     <td>${p.nama}</td>
                     <td>${jabatan}</td>
