@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online</title>
+</head>
+<body>
+    <form id="toko">
+        <table style="padding: 10px; width: 100%; background-color: rgb(0, 166, 255); border: 1px solid; text-align: center;">
+            <tr>
+                <th colspan="2">Toko Elektronik Aman <br><br></th>
+            </tr>
+            <tr>
+                <td><label for="nama">Nama Pelanggan:</label></td>
+                <td><input type="text" id="nama" name="nama" required></td>
+            </tr>
+            <tr>
+                <td><label for="produk">Pilih Produk:</label></td>
+                <td><select id="produk" name="produk">
+                    <option value="TV">TV</option>
+                    <option value="AC">AC</option>
+                    <option value="Kulkas">Kulkas</option>
+                </select> </td>
+            </tr>
+            <tr>
+                <td><label for="jumlah">Jumlah Item Produk:</label></td>
+                <td><input type="number" id="jumlah" name="jumlah" min="1" required><br><br></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" name="proses" value="Beli Sekarang" onclick="transaksi()"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        let hargaProduk = {
+            TV: 2000000,
+            AC: 3000000,
+            Kulkas: 4000000,
+        };
+
+        function transaksi() {
+            let nama = document.getElementById('nama').value;
+            let produk = document.getElementById('produk').value;
+            let jumlah = parseInt(document.getElementById('jumlah').value);
+
+            let hargaSatuan;
+            switch (produk) {
+                case "TV":
+                    hargaSatuan = hargaProduk.TV;
+                    break;
+                case "AC":
+                    hargaSatuan = hargaProduk.AC;
+                    break;
+                case "Kulkas":
+                    hargaSatuan = hargaProduk.Kulkas;
+                    break;
+                default:
+                    hargaSatuan = 0;
+            }
+
+            let hargaKotor = hargaSatuan * jumlah;
+
+            let diskon = 0;
+            if (produk === "Kulkas" && jumlah >= 3) {
+                diskon = 0.3 * hargaKotor;
+            } else if (produk === "AC" && jumlah >= 3) {
+                diskon = 0.2 * hargaKotor;
+            } else {
+                diskon = 0.1 * hargaKotor;
+            }
+
+            let ppn = 0.1 * (hargaKotor - diskon);
+            let hargaBayar = (hargaKotor - diskon) + ppn;
+
+            alert("Transaksi\n\nNama Pelanggan: " + nama +
+                "\nProduk yang dibeli: " + produk +
+                "\nHarga Satuan: " + hargaSatuan +
+                "\nJumlah Item Produk: " + jumlah +
+                "\nHarga Kotor: " + hargaKotor +
+                "\nDiskon: " + diskon +
+                "\nPPN: " + ppn +
+                "\nHarga Bayar: " + hargaBayar);
+        }
+    </script>
+</body>
+</html>
