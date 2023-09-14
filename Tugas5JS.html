@@ -1,0 +1,41 @@
+<script>
+    class gempa{
+        constructor(lokasi, skala){
+            this.lokasi = lokasi;
+            this.skala = skala;
+        }
+
+        dampak(){
+            let dampakGempa = "";
+            if (this.skala >= 0 && this.skala <= 2){
+                dampakGempa = "Tidak Terasa";
+            } else if (this.skala >=2 && this.skala <= 4){
+                dampakGempa = "Bangunan Retak";
+            } else if (this.skala >=4 && this.skala <= 6){
+                dampakGempa = "Bangunan Roboh";
+            } else if (this.skala > 6){
+                dampakGempa = "Bangunan Roboh dan Berpotensi Tsunami";
+            }
+
+            document.write('<br><br>Lokasi Gempa : ', this.lokasi);
+            document.write('<br>Skala Gempa : ', this.skala);
+            document.write('<br>Dampak Gempa : ',this.dampakGempa, '<hr>');
+
+        }
+
+    }
+
+    let g1 = new gempa ('Semarang, Jawa Tengah, Indoneisa', 5.1);
+    let g2 = new gempa ('Whitehorse, Yukon, Canada', 4.1);
+    let g3 = new gempa ('Donggala, Sulawasi Tenggara', 6.3);
+    let g4 = new gempa ('Kenai Peninsula, Alaska', 2.5);
+    let g5 = new gempa ('Jawa, Indonesia', 1.8);
+
+    document.write('<h1>Informasi Gempa Terkini</h1>')
+    g1.dampak();
+    g2.dampak();
+    g3.dampak();
+    g4.dampak();
+    g5.dampak();
+
+</script>
