@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#div1").click(function(){
+                $("#content").html("<h3>Profile</h3><br>Nama : Bima Prasetiya<br>Jenis Kelamin : Laki-laki<br>Alamat : Jl. Cibareno, Bendo,  Kepanjen Kidul, Kota Blitar<br>Asal : Universitas Islam Balitar");
+            });
+
+            $("#div2").click(function(){
+                $("#content").html("<h3>Moto Hidup</h3><p><b>Motto : </b>Terus berusaha dan jangan menyerah</p><p><b>Alasan : </b> Alasan saya memilih motto ini adalah karane saya bukan orang yang pintar dan tidak mudah paham akan sesuatu, jadi saya memerlukan lebih banyak waktu untuk mempelajari hal-hal baru.</p>");
+            });
+
+            $("#div3").click(function(){
+                $("#content").html("<h3>Keahlian</h3><p><b>Keahlian : </b> HTML, CSS, Laravel, JavaScript</p>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Letakkan kursor ke masing-masing kotak untuk melihat gambar</h2>
+
+    <div id="div1">Profile</div>
+    <div id="div2">Moto Hidup</div>
+    <div id="div3">Keahlian</div>
+
+    <div id="content"></div>
+</body>
+</html>
