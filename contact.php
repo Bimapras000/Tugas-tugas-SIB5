@@ -24,15 +24,15 @@
 					<a class="nav-link active" href="index.html">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Profile</a>
+					<a class="nav-link" href="portofolio.php">Profile</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="contact.html">Contact</a>
+					<a class="nav-link" href="#">Contact</a>
 				</li>
 				<li class="nav-item dropdown ml-md-auto">
 					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Menu</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						 <a class="dropdown-item" href="index.html">Home</a> <a class="dropdown-item" href="portofolio.html">portofolio</a> <a class="dropdown-item" href="contact.html">Contact</a>
+						<a class="dropdown-item" href="index.html">Home</a> <a class="dropdown-item" href="portofolio.php">portofolio</a> <a class="dropdown-item" href="contact.php">Contact</a>
 					</div>
 				</li>
 			</ul>
@@ -42,35 +42,30 @@
 		<div class="col-md-12">
 			<div class="page-header">
 				<h1>
-					Bima Prasetiya, <small> this is my portfolio</small>
+					Let's Connect
 				</h1>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-6">
-			<div class="jumbotron">
-				<h2>
-					Keahlian
-				</h2><br>
-				<p>Saya memiliki pengetahuan dan pemahaman mendalam tentang pengembangan web menggunakan HTML, CSS, JavaScript, dan Laravel, salah satu framework PHP terkemuka. Saya memperoleh keahlian ini melalui kursus intensif di PT. Hendevane Indonesia, di mana saya mendalami prinsip-prinsip dan praktik terbaru dalam pengembangan aplikasi web modern. Kursus ini memungkinkan saya untuk membangun aplikasi web yang efisien, terstruktur dengan baik, dan responsif terhadap kebutuhan pengguna. Saya juga mengasah kemampuan dalam mengintegrasikan berbagai teknologi dan menangani tantangan pengembangan yang kompleks. Saya sangat antusias untuk terus mengembangkan diri dan menerapkan pengetahuan ini dalam proyek-proyek mendatang.</p>
-		
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="jumbotron">
-				<h2>
-					Jenjang Pendidikan
-				</h2>
+		<div class="col-md-12">
+			<div class="jumbotron1">
+				<img alt="Bootstrap Image Preview" src="me1.jpg" class="rounded-circle" style="padding: 20px;"/>
+				<?php
+				$nama = "Bima Prasetiya";
+
+				echo '<h2>' .$nama. '</h2>';
+				?>
+				
 				<p>
-					<ul>
-						<li>MI Assyafi'iyah Kemloko 1</li>
-						<li>SMP Negeri 1 Nglegok</li>
-						<li>SMK Islam 1 Blitar</li>
-						<li>Universitas Islam Balitar</li>
-					</ul>
+					If you have a project idea in mind, please get in touch.<br>
+					I will be happy to discuss ideas with you and how we can work together.
 				</p>
-			</div>
+				<p>
+					<a class="btn btn-primary btn-large" href="#"> Linkedin </a>
+					<a class="btn btn-success btn-large" href="#"> WhatsApp </a>
+					<a class="btn btn-info btn-large" href="#"> Telegram </a>
+				</p>
 		</div>
 	</div>
 	<div class="row">

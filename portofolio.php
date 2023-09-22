@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-pills">
+				<li class="nav-item">
+					<a class="nav-link active" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="contact.php">Contact</a>
+				</li>
+				<li class="nav-item dropdown ml-md-auto">
+					 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Menu</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						 <a class="dropdown-item" href="index.html">Home</a> <a class="dropdown-item" href="portofolio.php">portofolio</a> <a class="dropdown-item" href="contact.php">Contact</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1>
+					Bima Prasetiya, <small> this is my portfolio</small>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="jumbotron">
+				<h2>
+					Keahlian
+				</h2><br>
+				<p>Saya memiliki pengetahuan dan pemahaman mendalam tentang pengembangan web menggunakan HTML, CSS, JavaScript, dan Laravel, salah satu framework PHP terkemuka. Saya memperoleh keahlian ini melalui kursus intensif di PT. Hendevane Indonesia, di mana saya mendalami prinsip-prinsip dan praktik terbaru dalam pengembangan aplikasi web modern. Kursus ini memungkinkan saya untuk membangun aplikasi web yang efisien, terstruktur dengan baik, dan responsif terhadap kebutuhan pengguna. Saya juga mengasah kemampuan dalam mengintegrasikan berbagai teknologi dan menangani tantangan pengembangan yang kompleks. Saya sangat antusias untuk terus mengembangkan diri dan menerapkan pengetahuan ini dalam proyek-proyek mendatang.</p>
+		
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="jumbotron">
+				<?php
+				$alamat = "Jl. Cibareno no.38, Bendo, Kepanjenkidul, Blitar";
+
+				echo '<h2> Alamat </h2>';
+				echo $alamat. '<br><br>'; 
+				?>
+				<h2>
+					Jenjang Pendidikan
+				</h2>
+				<p>
+					<ul>
+						<li>MI Assyafi'iyah Kemloko 1</li>
+						<li>SMP Negeri 1 Nglegok</li>
+						<li>SMK Islam 1 Blitar</li>
+						<li>Universitas Islam Balitar</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
