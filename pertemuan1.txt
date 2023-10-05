@@ -1,2 +1,18 @@
 //melihat seluruh database
 Selamat Datang;
+
+//membuat database baru 
+CREATE DATABASE tokosib5;
+
+//membuat tabel
+CREATE TABLE jenis(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    nama varchar (30) NOT NULL UNIQUE
+);
+
+/* id adalah nama kolom atau header kolom
+int adalh type database
+PRIMARY KEY adalah key atau kunci dari sebuah tabel
+AUTO_INCREMENT adalh key untuk automatisasi penomoran
+NOT NULL menandakan kolom tersebut tidak boleh kosong jika data mulai diisi
+UNIQUE adalah key untuk kolom agar data tidak boleh sama*/

@@ -1,0 +1,30 @@
+//Membuka commend prompt
+//masuk ke mysql dengan mengetikkan 
+// cd \xampp\mysql\bin
+
+//setelah itu lakukan koneksi ke mysql 
+//mysql -u root -p
+
+//membuat database baru dengan nama dbpegawai
+//CREATE DATABASE dbpegawai;
+
+//masuk atau menggunakan dbpegawai
+//USE dbpegawai;
+
+//melihat semua tabel yang ada di dalam database dbpegawai
+//show tables;
+
+/* membuat tabel baru 
+CREATE TABLE pegawai(
+    -> id int primary key auto_increment,
+    -> nip char(5) not null unique,
+    -> nama varchar(30) not null unique,
+    -> gerder enum('L','P') not null,
+    -> umur int not null,
+    -> berat_badan float); 
+*/
+//melihat semua database yang ada 
+//SHOW DATABASES;
+
+//melihat deskripsi tabel pegawai
+//DESC pegawai;
