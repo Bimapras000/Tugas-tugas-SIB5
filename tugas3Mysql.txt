@@ -1,0 +1,119 @@
+1. Menambahkan 6 data di tabel pelanggan
+
+INSERT INTO pelanggan (kode, nama, jk, tmp_lahir, tgl_lahir, email, kartu_id) VALUES
+('B005', 'Wulan', 'P', 'Jakarta', '1999-05-20', 'wulandari454@gmail.com', 2),
+('B006', 'Eko', 'L', 'Sulawesi', '1997-02-04', 'eko0090@gmail.com', 3),
+('B007', 'Herman', 'L', 'Banten', '2000-09-09', 'hermansah898@gmail.com', 4),
+('B008', 'Astrid', 'P', 'Surabaya', '2001-05-10', 'asteroid202@gmail.com', 1),
+('B009', 'Mega', 'P', 'Jakarta', '1999-05-20', 'meg2039@gmail.com', 2),
+('B010', 'Aji', 'L', 'Blitar', '2002-04-20', 'santoso030@gmail.com', 1);
+
+2. Menambahkan 5 data di tabel produk
+
+INSERT INTO produk (kode,nama,harga_beli,harga_jual,stok,min_stok,jenis_produk_id) VALUES 
+('M002','Pop Mie',4000,8000,19,9,3),
+('D002','Cola',4000,6000,20,8,4),
+('E002','AC',1500000,2300000,10,4,1),
+('F002','Etalase',200000,400000,12,4,2),
+('K002','Laptop',7000000,9000000,5,2,5);
+
+3. worksheet
+a. membuat tabel pesanan_items
+    CREATE TABLE pesanan_items (
+        id int not null AUTO_INCREMENT PRIMARY KEY,
+        produk_id int(11) NOT null ,
+        pesanan_id int(11) NOT null,
+        Qty int(11) NOT null,
+        harga double,
+        FOREIGN KEY (produk_id) REFERENCES produk(id),
+        FOREIGN KEY (pesanan_id) REFERENCES pesanan(id)
+    );
+
+b. membuat tabel vendor 
+
+    CREATE TABLE vendor (
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        nomor VARCHAR(4) NOT NULL,
+        nama VARCHAR(40) NOT NULL,
+        kota VARCHAR(30),
+        kontak VARCHAR(30),
+        FOREIGN KEY (nomor) REFERENCES pembelian(nomor)
+    );
+
+c. Membuat tabel pembelian
+
+    CREATE TABLE pembelian (
+        id INT not null AUTO_INCREMENT PRIMARY KEY,
+        tanggal varchar(45) NOT NULL,
+        nomor VARCHAR(10) NOT NULL,
+        produk_id INT(11) NOT NULL,
+        jumlah INT(11) NOT NULL,
+        harga double NOT NULL,
+        vendor_id INT(11) NOT NULL,
+        FOREIGN KEY (produk_id) REFERENCES produk(id),
+        FOREIGN KEY (vendor_id) REFERENCES vendor(id)
+    );
+
+4. worksheet2
+2.2
+a.	menampilkan data produk yang stoknya 3 dan 10
+    SELECT * from produk WHERE stok=3 OR stok=10;
+
+b.	menampilkan data produk yang harga jualnya kurang dari 5 juta tetapi lebih dari 500 ribu
+    SELECT * FROM produk WHERE harga_jual < 5000000 AND harga_jual > 500000;
+
+c.	menampilkan data produk yang harus segera ditambah stoknya
+    SELECT * FROM produk WHERE min_stok > stok;
+
+d.	menampilkan data pelanggan mulai dari yang paling muda
+    SELECT * FROM pelanggan ORDER BY tgl_lahir DESC;
+
+e.	menampilkan data pelanggan yang lahirnya di Jakarta dan gendernya perempuan
+    SELECT * FROM pelanggan WHERE tmp_lahir='jakarta' AND jk='P';
+
+f.	menampilkan data pelanggan yang ID nya 2, 4 dan 6
+    SELECT * from pelanggan WHERE id IN (2,4,6);
+
+g.	menampilkan data produk yang harganya antara 500 ribu sampai 6 juta
+    SELECT * FROM produk WHERE harga_jual >= 500000 AND harga_jual<= 6000000;
+
+2.3
+a.	menampilkan produk yang kode awalnya huruf K dan huruf M
+    SELECT * FROM produk WHERE kode LIKE 'K%' OR kode LIKE 'M%';
+
+b.	menampilkan produk yang kode awalnya bukan huruf M
+    SELECT * FROM produk WHERE kode NOT LIKE 'M%';
+
+c.	menampilkan produk-produk televisi
+    SELECT * FROM produk WHERE nama LIKE '%televisi%';
+
+d.	menampilkan pelanggan mengandung huruf 'SA'
+    SELECT * FROM pelanggan WHERE nama LIKE '%SA%';
+
+e.	menampilkan pelanggan yang lahirnya bukan di Jakarta dan mengandung huruf ‘yo‘
+    SELECT * FROM pelanggan WHERE tmp_lahir NOT LIKE 'Jakarta' AND nama LIKE '%yo%';
+
+f.	menampilkan pelanggan yang karakter huruf ke – 2 nya adalah A
+    SELECT * FROM pelanggan WHERE SUBSTRING(nama, 2, 1) = 'A';
+
+2.4 
+
+1.	Tampilkan 2 data produk termahal
+    SELECT *FROM produk ORDER BY harga_beli DESC LIMIT 2;
+
+2.	Tampilkan produk yang paling murah
+    SELECT * FROM produk ORDER BY harga_beli ASC LIMIT 1;
+
+3.	Tampilkan produk yang stoknya paling banyak
+    SELECT * FROM produk ORDER BY stok DESC LIMIT 1;
+
+4.	Tampilkan dua produk yang stoknya paling sedikit
+    SELECT * FROM produk ORDER BY stok ASC LIMIT 2;
+
+5.	Tampilkan pelanggan yang paling muda
+    SELECT * FROM pelanggan ORDER BY tgl_lahir DESC LIMIT 1;
+
+6.	Tampilkan pelanggan yang paling tua
+    SELECT * FROM pelanggan ORDER BY tgl_lahir ASC LIMIT 1;
+
+
