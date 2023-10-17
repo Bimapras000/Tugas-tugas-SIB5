@@ -1,0 +1,39 @@
+5.1
+2. CREATE VIEW pembelian_produk_vendor
+    -> AS SELECT pembelian.id, pembelian.tanggal, pembelian.nomor,
+    -> pembelian.jumlah, pembelian.harga, produk.nama AS nama_produk,
+    -> vendor.nama AS nama_vendor, vendor.kontak
+    -> FROM pembelian INNER JOIN produk ON pembelian.produk_id = produk.id
+    -> INNER JOIN vendor ON pembelian.vendor_id = vendor.id;
+
+3.  CREATE VIEW pesanan_pelanggan_produk_jenisproduk_pesananitems
+    -> AS SELECT pesanan.id, pesanan.tanggal, pesanan.total, produk.kode,
+    ->      produk.nama AS nama_produk, jenis_produk.nama AS nama_jenis_produk,
+    ->      pesanan_items.qty, pesanan_items.harga AS harga_jual
+    ->      FROM pesanan
+    ->      INNER JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id
+    ->      INNER JOIN produk ON pesanan.produk_id = produk.id
+    ->      INNER JOIN jenis_produk ON pesanan.jenis_produk_id = jenis_produk.id
+    ->      INNER JOIN pesanan_items ON pesanan.id = pesanan_items.pesanan_id;
+
+
+5.2
+1. 
+START TRANSACTION;
+
+INSERT INTO produk (kode, nama, stok, harga_beli, harga_jual) VALUES
+('P001', 'Produk 1', 10, 1000, 1500),
+('P002', 'Produk 2', 15, 1200, 1800),
+('P003', 'Produk 3', 20, 800, 1300);
+
+UPDATE produk SET stok = 25 WHERE kode = 'P001';
+
+SAVEPOINT after_insert;
+
+DELETE FROM pembayaran WHERE id = 1;
+
+ROLLBACK TO after_insert;
+
+UPDATE kartu SET iuran = 600000 WHERE kode = 'Silver';
+
+COMMIT;
